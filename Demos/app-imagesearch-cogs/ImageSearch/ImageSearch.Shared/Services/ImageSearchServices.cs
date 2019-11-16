@@ -1,0 +1,47 @@
+﻿using System;
+using System.Net;
+using System.Threading.Tasks;
+
+using Microsoft.Azure.CognitiveServices.Search.ImageSearch;
+using Microsoft.Azure.CognitiveServices.Search.ImageSearch.Models;
+
+namespace ImageSearch.Services
+{
+    static class ImageSearchServices
+    {
+        static readonly Lazy<ImageSearchClient> imageSearchApiClient =
+            new Lazy<ImageSearchClient>(() => new ImageSearchClient(new ApiKeyServiceClientCredentials(ServiceKeys.BingSearch)));
+
+        public static event EventHandler InvalidApiKey;
+        public static event EventHandler Error429_TooManyApiRequests;
+
+        static ImageSearchClient ImageSearchApiClient => imageSearchApiClient.Value;
+
+        public static async Task<Images> GetImage(string searchText)
+        {
+            try
+            {
+                return await ImageSearchApiClient.Images.SearchAsync(searchText).ConfigureAwait(false);
+            }
+            catch (ErrorResponseException e) when (e.Response.StatusCode.Equals(HttpStatusCode.Unauthorized))
+            {
+                OnInvalidApiKey();
+                throw;
+            }
+            catch (ErrorResponseException e) when (e.Response.StatusCode.Equals(HttpStatusCode.TooManyRequests))
+            {
+                OnError429_TooManyApiRequests();
+                throw;
+            }
+            catch (ArgumentNullException)
+            {
+                OnInvalidApiKey();
+                throw;
+            }
+        }
+
+        static void OnInvalidApiKey() => InvalidApiKey?.Invoke(null, EventArgs.Empty);
+
+        static void OnError429_TooManyApiRequests() => Error429_TooManyApiRequests?.Invoke(null, EventArgs.Empty);
+    }
+}

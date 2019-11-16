@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+        <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+        <ProjectGuid>{7F106FBA-12E5-4D92-9F4C-38EAD1652E7E}</ProjectGuid>
+        <OutputType>Exe</OutputType>
+        <RootNamespace>MyWeather.iOS</RootNamespace>
+        <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+        <AssemblyName>MyWeatheriOS</AssemblyName>
+        <ProduceAssemblyReference>true</ProduceAssemblyReference>
+        <NuGetPackageImportStamp>
+        </NuGetPackageImportStamp>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+        <DefineConstants>DEBUG;</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <ConsolePause>false</ConsolePause>
+        <MtouchArch>x86_64</MtouchArch>
+        <MtouchLink>None</MtouchLink>
+        <MtouchDebug>true</MtouchDebug>
+        <MtouchProfiling>true</MtouchProfiling>
+        <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+        <CodesignKey>iPhone Developer</CodesignKey>
+        <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+        <MtouchFastDev>true</MtouchFastDev>
+        <MtouchFloat32>true</MtouchFloat32>
+        <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+        <DebugType>portable</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\iPhone\Release</OutputPath>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+        <MtouchArch>ARM64</MtouchArch>
+        <ConsolePause>false</ConsolePause>
+        <CodesignKey>iPhone Developer</CodesignKey>
+        <MtouchUseLlvm>true</MtouchUseLlvm>
+        <MtouchFloat32>true</MtouchFloat32>
+        <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+        <DebugType>portable</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <MtouchArch>x86_64</MtouchArch>
+        <ConsolePause>false</ConsolePause>
+        <MtouchLink>None</MtouchLink>
+        <DeviceSpecificBuild>true</DeviceSpecificBuild>
+        <MtouchUseLlvm>true</MtouchUseLlvm>
+        <MtouchFloat32>true</MtouchFloat32>
+        <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>portable</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\iPhone\Debug</OutputPath>
+        <DefineConstants>DEBUG;</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <ConsolePause>false</ConsolePause>
+        <MtouchArch>ARM64</MtouchArch>
+        <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+        <MtouchProfiling>True</MtouchProfiling>
+        <CodesignKey>iPhone Developer</CodesignKey>
+        <MtouchDebug>True</MtouchDebug>
+        <CodesignProvision />
+        <CodesignResourceRules />
+        <CodesignExtraArgs />
+        <MtouchLink>SdkOnly</MtouchLink>
+        <MtouchFastDev>true</MtouchFastDev>
+        <MtouchUseLlvm>False</MtouchUseLlvm>
+        <MtouchUseThumb>False</MtouchUseThumb>
+        <MtouchOptimizePNGs>True</MtouchOptimizePNGs>
+        <DeviceSpecificBuild>true</DeviceSpecificBuild>
+        <MtouchI18n />
+        <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+        <MtouchFloat32>true</MtouchFloat32>
+        <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="Xamarin.iOS" />
+        <Reference Include="System" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+        <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.3" />
+        <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
+        <PackageReference Include="Xamarin.Forms" Version="4.2.0.618605-pre2" />
+        <PackageReference Include="AsyncAwaitBestPractices.MVVM" Version="3.1.0-pre2" />
+        <PackageReference Include="Refit" Version="4.7.9" />
+        <PackageReference Include="Polly" Version="7.1.0" />
+        <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+    </ItemGroup>
+    <ItemGroup>
+        <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-60%402x.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-60%403x.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-76.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-76%402x.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-Small.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-Small%402x.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-Small%403x.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-Small-40.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-Small-40%402x.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-Small-40%403x.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Contents.json">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default%402x.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default-568h%402x.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default-Portrait.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default-Portrait%402x.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+    </ItemGroup>
+    <ItemGroup>
+        <ITunesArtwork Include="Resources\ITunesArtwork" />
+        <ITunesArtwork Include="Resources\ITunesArtwork%402x" />
+    </ItemGroup>
+    <ItemGroup>
+        <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    </ItemGroup>
+    <ItemGroup>
+        <InterfaceDefinition Include="EmptyStoryboard1.storyboard" />
+        <None Include="Info.plist">
+            <SubType>Designer</SubType>
+        </None>
+        <None Include="Entitlements.plist" />
+        <InterfaceDefinition Include="View1.xib" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Main.cs" />
+        <Compile Include="AppDelegate.cs" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\MyWeather\MyWeather.csproj">
+            <Project>{6664B839-80A9-47CF-BFE1-0BA26BADF026}</Project>
+            <Name>MyWeather</Name>
+        </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <BundleResource Include="Resources\cloud%402x.png" />
+      <BundleResource Include="Resources\cloud%403x.png" />
+      <BundleResource Include="Resources\sun%402x.png" />
+      <BundleResource Include="Resources\sun%403x.png" />
+    </ItemGroup>
+    <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+</Project>

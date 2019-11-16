@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+        <ProjectGuid>{65B45A0F-D6D8-432F-B36D-D7D41675DC76}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <RootNamespace>MyWeather.Droid</RootNamespace>
+        <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+        <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+        <AndroidResgenClass>Resource</AndroidResgenClass>
+        <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+        <AndroidApplication>True</AndroidApplication>
+        <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
+        <AssemblyName>MyWeather.Droid</AssemblyName>
+        <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+        <ProduceAssemblyReference>true</ProduceAssemblyReference>
+        <NuGetPackageImportStamp>
+        </NuGetPackageImportStamp>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>portable</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug</OutputPath>
+        <DefineConstants>DEBUG;</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <ConsolePause>false</ConsolePause>
+        <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
+        <AndroidTlsProvider>btls</AndroidTlsProvider>
+        <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
+        <AndroidUseAapt2>true</AndroidUseAapt2>
+        <AndroidDexTool>d8</AndroidDexTool>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DebugType>portable</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release</OutputPath>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+        <ConsolePause>false</ConsolePause>
+        <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
+        <AndroidTlsProvider>btls</AndroidTlsProvider>
+        <BundleAssemblies>true</BundleAssemblies>
+        <AotAssemblies>true</AotAssemblies>
+        <AndroidEnableProfiledAot>true</AndroidEnableProfiledAot>
+        <EnableLLVM>true</EnableLLVM>
+        <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
+        <AndroidUseAapt2>true</AndroidUseAapt2>
+        <AndroidDexTool>d8</AndroidDexTool>
+        <AndroidLinkTool>r8</AndroidLinkTool>
+        <AndroidSupportedAbis>armeabi-v7a;arm64-v8a;x86;x86_64</AndroidSupportedAbis>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="System" />
+        <Reference Include="Mono.Android" />
+        <Reference Include="Java.Interop" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+        <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.3" />
+        <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
+        <PackageReference Include="Xamarin.Forms" Version="4.2.0.618605-pre2" />
+        <PackageReference Include="AsyncAwaitBestPractices.MVVM" Version="3.1.0-pre2" />
+        <PackageReference Include="Refit" Version="4.7.9" />
+        <PackageReference Include="Polly" Version="7.1.0" />
+        <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+        <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.5.2" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="MainActivity.cs" />
+        <Compile Include="Resources\Resource.designer.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="Resources\AboutResources.txt" />
+        <None Include="Properties\AndroidManifest.xml" />
+        <None Include="Assets\AboutAssets.txt" />
+    </ItemGroup>
+    <ItemGroup>
+        <AndroidResource Include="Resources\drawable-hdpi\Icon.png" />
+        <AndroidResource Include="Resources\drawable-mdpi\Icon.png" />
+        <AndroidResource Include="Resources\drawable-xhdpi\Icon.png" />
+        <AndroidResource Include="Resources\drawable-xxhdpi\Icon.png" />
+        <AndroidResource Include="Resources\drawable-xxxhdpi\Icon.png" />
+        <AndroidResource Include="Resources\layout\Tabbar.axml">
+          <SubType></SubType>
+          <Generator></Generator>
+        </AndroidResource>
+        <AndroidResource Include="Resources\layout\Toolbar.axml">
+          <SubType></SubType>
+          <Generator></Generator>
+        </AndroidResource>
+        <AndroidResource Include="Resources\values\styles.xml">
+          <SubType></SubType>
+          <Generator></Generator>
+        </AndroidResource>
+        <AndroidResource Include="Resources\drawable\cloud.png">
+          <SubType></SubType>
+          <Generator></Generator>
+        </AndroidResource>
+        <AndroidResource Include="Resources\drawable\sun.png">
+          <SubType></SubType>
+          <Generator></Generator>
+        </AndroidResource>
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Resources\drawable\" />
+        <Folder Include="Resources\layout\" />
+        <Folder Include="Resources\values\" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\MyWeather\MyWeather.csproj">
+            <Project>{6664B839-80A9-47CF-BFE1-0BA26BADF026}</Project>
+            <Name>MyWeather</Name>
+        </ProjectReference>
+    </ItemGroup>
+    <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+</Project>
